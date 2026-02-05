@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MEMES NEVER DIE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Anton&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:#050505;
+  color:white;
+  font-family:'Anton',sans-serif;
+  overflow:hidden;
+}
+
+/* animated graffiti background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, #ff00ff44, transparent),
+    radial-gradient(circle at 80% 70%, #00ffff44, transparent),
+    radial-gradient(circle at 50% 50%, #ffff0044, transparent);
+  animation:bgmove 12s infinite alternate;
+  z-index:-1;
+}
+
+@keyframes bgmove{
+  from{filter:hue-rotate(0deg);}
+  to{filter:hue-rotate(180deg);}
+}
+
+/* slider */
+.slider{
+  display:flex;
+  width:400%;
+  height:100vh;
+  transition:transform 0.5s ease;
+}
+
+section{
+  width:100vw;
+  flex-shrink:0;
+  padding:50px 20px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* graffiti title */
+h1{
+  font-family:'Rubik Glitch', cursive;
+  font-size:3rem;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff00ff;}
+  to{text-shadow:0 0 25px #00ffff;}
+}
+
+.hero img{
+  width:90%;
+  max-width:350px;
+  border-radius:25px;
+  box-shadow:0 0 30px rgba(0,255,255,0.5);
+  margin:25px 0;
+}
+
+p{
+  max-width:600px;
+  opacity:.85;
+  margin-bottom:25px;
+  line-height:1.5;
+}
+
+/* buttons */
+.buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  padding:15px 30px;
+  border:2px solid white;
+  border-radius:50px;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:white;
+  color:black;
+  transform:scale(1.1) rotate(-2deg);
+}
+
+/* cards */
+.card{
+  background:#111;
+  padding:20px 30px;
+  border-radius:20px;
+  margin:10px;
+  box-shadow:0 0 15px rgba(255,255,255,0.1);
+}
+
+/* roadmap */
+.roadmap{
+  max-width:500px;
+  text-align:left;
+}
+.step{
+  border-left:4px solid #00ffff;
+  padding-left:15px;
+  margin:15px 0;
+}
+
+/* dots */
+.dots{
+  position:fixed;
+  bottom:15px;
+  width:100%;
+  text-align:center;
+}
+.dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:#555;
+  border-radius:50%;
+  margin:0 5px;
+}
+.dot.active{background:white;}
+</style>
+</head>
+
+<body>
+
+<div class="slider" id="slider">
+
+<!-- HERO -->
+<section class="hero">
+  <h1>MEMES NEVER DIE</h1>
+
+  <p style="font-size:1.3rem;opacity:0.9;">
+    When the market dies, memes survive.
+  </p>
+
+  <img src="5.jpg" alt="meme">
+
+  <p>
+    When charts turn red and hope disappears,  
+    memes are the last thing standing.
+
+    This is a Solana meme coin born in a dead market.  
+    No fear. No roadmap. Only memes that never die.
+  </p>
+
+  <div class="buttons">
+    <a href="#" class="btn">BUY (SOL)</a>
+    <a href="https://x.com/cryptomayo13" target="_blank" class="btn">X</a>
+    <a href="#" class="btn">TELEGRAM</a>
+  </div>
+</section>
+
+<!-- TOKEN INFO -->
+<section>
+  <h1>TOKEN</h1>
+
+  <div class="card">🔥 Chain: Solana</div>
+  <div class="card">💎 Supply: 1,000,000,000</div>
+  <div class="card">🩸 Market dies. Memes survive.</div>
+  <div class="card">👀 No Team Tokens</div>
+  <div class="card">🔒 LP Burned</div>
+</section>
+
+<!-- ROADMAP -->
+<section>
+  <h1>STORY</h1>
+
+  <div class="roadmap">
+    <div class="step">Phase 1: Born in a red market</div>
+    <div class="step">Phase 2: Memes spread while others panic</div>
+    <div class="step">Phase 3: Survivors gather</div>
+    <div class="step">Phase 4: Only memes remain</div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section>
+  <h1>JOIN</h1>
+
+  <p>
+    Markets come and go.  
+    Coins rise and fall.  
+
+    Memes stay forever.
+
+    If everything dies,  
+    memes will be the last ones alive.
+  </p>
+
+  <div class="buttons">
+    <a href="#" class="btn">BUY</a>
+    <a href="https://x.com/cryptomayo13" target="_blank" class="btn">X</a>
+    <a href="#" class="btn">TELEGRAM</a>
+  </div>
+</section>
+
+</div>
+
+<!-- dots -->
+<div class="dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script>
+let slider = document.getElementById("slider");
+let dots = document.querySelectorAll(".dot");
+let index = 0;
+let startX = 0;
+
+document.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchend", e=>{
+  let endX = e.changedTouches[0].clientX;
+  if(startX - endX > 50) next();
+  if(endX - startX > 50) prev();
+});
+
+function update(){
+  slider.style.transform = `translateX(-${index * 100}vw)`;
+  dots.forEach(d=>d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function next(){
+  if(index < 3){ index++; update(); }
+}
+
+function prev(){
+  if(index > 0){ index--; update(); }
+}
+</script>
+
+</body>
+  </html>
