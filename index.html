@@ -1,43 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>MEMES NEVER DIE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Anton&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   background:#050505;
   color:white;
-  font-family:'Anton',sans-serif;
+  font-family:'Anton', sans-serif;
   overflow-x:hidden;
-}
-
-/* animated graffiti background */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 30%, #ff00ff44, transparent),
-    radial-gradient(circle at 80% 70%, #00ffff44, transparent),
-    radial-gradient(circle at 50% 50%, #ffff0044, transparent);
-  animation:bgmove 12s infinite alternate;
-  z-index:-1;
-}
-
-@keyframes bgmove{
-  from{filter:hue-rotate(0deg);}
-  to{filter:hue-rotate(180deg);}
 }
 
 /* 섹션 공통 */
 section{
   width:100%;
-  padding:70px 15px 50px;
+  padding:70px 20px 50px;
   text-align:center;
   display:flex;
   flex-direction:column;
@@ -46,54 +28,32 @@ section{
   scroll-margin-top:20px;
 }
 
-/* Hero title */
+/* 제목 */
 h1, h2, .card p, .step, .ca-box span{
-  font-family:'Rubik Glitch', cursive;
-  text-shadow:
-     0 0 5px #00ffff,
-     0 0 10px #00ffff,
-     0 0 20px #ff00ff,
-     0 0 30px #ff00ff,
-     0 0 40px #00ffff,
-     0 0 55px #00ffff,
-     0 0 75px #ff00ff;
+  font-family:'Permanent Marker', cursive;
   color:#fff;
 }
 
-/* Hero */
 h1{
   font-size:3rem;
   line-height:1.2;
   margin-bottom:20px;
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  from{text-shadow:
-     0 0 5px #00ffff,
-     0 0 10px #00ffff,
-     0 0 20px #ff00ff;}
-  to{text-shadow:
-     0 0 25px #ff00ff,
-     0 0 35px #00ffff,
-     0 0 45px #ff00ff;}
 }
 
 .hero img{
   width:90%;
   max-width:400px;
-  border-radius:25px;
-  box-shadow:0 0 35px rgba(0,255,255,0.6);
+  border-radius:20px;
+  box-shadow:0 0 15px rgba(0,0,0,0.5);
   margin:25px 0;
 }
 
 p{
-  max-width:600px;
+  max-width:650px;
   opacity:.9;
   margin-bottom:25px;
-  line-height:1.5;
+  line-height:1.6;
   color:#fff;
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #00ffff;
   font-size:1.25rem;
 }
 
@@ -154,7 +114,7 @@ p{
   border-radius:25px;
   max-width:420px;
   text-align:center;
-  box-shadow:0 0 25px rgba(0,255,255,0.4);
+  box-shadow:0 0 25px rgba(0,0,0,0.4);
   font-size:1.2rem;
 }
 
@@ -167,9 +127,9 @@ p{
   margin:20px 0;
   max-width:420px;
   color:#fff;
-  text-shadow: 0 0 5px #ff00ff,0 0 15px #00ffff;
   word-break: break-all;
   font-size:1.15rem;
+  text-align:left;
 }
 
 /* 모바일 대응 */
@@ -190,17 +150,17 @@ p{
   <h1>MEMES<br>NEVER DIE</h1>
 
   <p>
-    When the market dies, memes survive.
+    In the most chaotic markets, when coins rise and fall, memes remain.  
+    MEMES NEVER DIE is a Solana-based meme coin built to survive every market crash,  
+    bringing fun and reliability to the crypto community.
   </p>
 
   <img src="5.jpg" alt="meme">
 
   <p>
-    When charts turn red and hope disappears,  
-    memes are the last thing standing.
-
-    This is a Solana meme coin born in a dead market.  
-    No fear. No roadmap. Only memes that never die.
+    Even when charts turn red and uncertainty spreads,  
+    our community can rely on a coin that’s designed to endure.  
+    No complicated roadmap, no hidden agendas—just pure meme culture and long-lasting value.
   </p>
 
   <div class="buttons">
@@ -213,22 +173,22 @@ p{
 <!-- TICKER -->
 <section class="ticker">
   <h2>💎 TICKER: MND</h2>
-  <p>Memes Never Die — The meme that survives every market.</p>
+  <p>Memes Never Die — a meme coin that survives all markets, trusted by its holders and built on transparency.</p>
 </section>
 
 <!-- TOKEN INFO -->
 <section>
   <h1>TOKEN</h1>
 
-  <div class="card">🔥 Chain: Solana</div>
-  <div class="card">💎 Supply: 1,000,000,000</div>
-  <div class="card">🩸 Market dies. Memes survive.</div>
-  <div class="card">👀 No Team Tokens</div>
-  <div class="card">🔒 LP Burned</div>
+  <div class="card">🔥 Chain: Solana — fast, secure, and low fees</div>
+  <div class="card">💎 Supply: 1,000,000,000 tokens — fair distribution, community-driven</div>
+  <div class="card">🩸 Market dies. Memes survive — designed to withstand downturns</div>
+  <div class="card">👀 No Team Tokens — no unfair advantages, fully decentralized</div>
+  <div class="card">🔒 LP Burned — locked liquidity for long-term trust</div>
 
   <!-- CA 박스 -->
   <div class="ca-box">
-    💠 CA: <span>여기에_토큰_컨트랙트_주소</span>
+    💠 000000000
   </div>
 </section>
 
@@ -237,10 +197,10 @@ p{
   <h1>STORY</h1>
 
   <div class="roadmap">
-    <div class="step">💥 Phase 1: Born in a red market 🔴 (Chaos begins!)</div>
-    <div class="step">😂 Phase 2: Memes spread while others panic 😱 (HODLers unite!)</div>
-    <div class="step">🚀 Phase 3: Survivors gather 💪 (Only legends left!)</div>
-    <div class="step">🔥 Phase 4: Only memes remain 🏆 (Memes conquer all!)</div>
+    <div class="step">💥 Phase 1: Born in a red market 🔴 — chaos fuels creativity!</div>
+    <div class="step">😂 Phase 2: Memes spread while others panic 😱 — communities unite, laughter survives</div>
+    <div class="step">🚀 Phase 3: Survivors gather 💪 — strong holders and fans form the foundation</div>
+    <div class="step">🔥 Phase 4: Only memes remain 🏆 — lasting culture and resilience in crypto</div>
   </div>
 </section>
 
@@ -249,13 +209,11 @@ p{
   <h1>JOIN</h1>
 
   <p>
-    Markets come and go.  
-    Coins rise and fall.  
+    Markets fluctuate. Coins rise and fall.  
+    But memes endure.  
 
-    Memes stay forever.
-
-    If everything dies,  
-    memes will be the last ones alive.
+    By joining MEMES NEVER DIE, you participate in a transparent, fair, and fun community-driven project.  
+    Every holder is part of a coin that celebrates creativity, trust, and survival in the wild world of crypto.
   </p>
 
   <div class="buttons">
