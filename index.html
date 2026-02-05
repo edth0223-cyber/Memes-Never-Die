@@ -13,7 +13,7 @@ body{
   background:#050505;
   color:white;
   font-family:'Anton',sans-serif;
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
 /* animated graffiti background */
@@ -34,30 +34,24 @@ body::before{
   to{filter:hue-rotate(180deg);}
 }
 
-/* slider */
-.slider{
-  display:flex;
-  width:400%;
-  height:100vh;
-  transition:transform 0.5s ease;
-}
-
 section{
-  width:100vw;
-  flex-shrink:0;
+  width:100%;
   padding:50px 20px;
   text-align:center;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  scroll-margin-top:20px;
 }
 
-/* graffiti title */
+/* Hero title */
 h1{
   font-family:'Rubik Glitch', cursive;
   font-size:3rem;
   animation:glow 2s infinite alternate;
+  word-wrap: break-word;
+  line-height:1.2;
 }
 
 @keyframes glow{
@@ -110,6 +104,8 @@ p{
   border-radius:20px;
   margin:10px;
   box-shadow:0 0 15px rgba(255,255,255,0.1);
+  max-width:300px;
+  text-align:center;
 }
 
 /* roadmap */
@@ -123,32 +119,45 @@ p{
   margin:15px 0;
 }
 
-/* dots */
-.dots{
-  position:fixed;
-  bottom:15px;
-  width:100%;
+/* ticker section */
+.ticker {
+  margin:30px auto;
+  padding:20px 40px;
+  background:rgba(255,255,255,0.05);
+  border:2px solid #00ffff;
+  border-radius:20px;
+  max-width:400px;
   text-align:center;
+  box-shadow:0 0 20px rgba(0,255,255,0.3);
 }
-.dot{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  background:#555;
-  border-radius:50%;
-  margin:0 5px;
+
+.ticker h2 {
+  font-family:'Rubik Glitch', cursive;
+  font-size:2rem;
+  color:#00ffff;
+  margin-bottom:10px;
 }
-.dot.active{background:white;}
+
+.ticker p {
+  font-size:1rem;
+  opacity:0.8;
+  line-height:1.4;
+}
+
+/* 모바일 대응 */
+@media(max-width:600px){
+  h1{font-size:1.8rem;padding:0 10px;}
+  .card{max-width:90%;}
+  .ticker{padding:15px 20px; max-width:90%;}
+}
 </style>
 </head>
 
 <body>
 
-<div class="slider" id="slider">
-
 <!-- HERO -->
 <section class="hero">
-  <h1>MEMES NEVER DIE</h1>
+  <h1>MEMES<br>NEVER DIE</h1>
 
   <p style="font-size:1.3rem;opacity:0.9;">
     When the market dies, memes survive.
@@ -168,7 +177,14 @@ p{
     <a href="#" class="btn">BUY (SOL)</a>
     <a href="https://x.com/cryptomayo13" target="_blank" class="btn">X</a>
     <a href="#" class="btn">TELEGRAM</a>
+    <a href="https://solscan.io/token/여기에토큰주소" target="_blank" class="btn">CONTRACT</a>
   </div>
+</section>
+
+<!-- TICKER -->
+<section class="ticker">
+  <h2>💎 TICKER: MND</h2>
+  <p>Memes Never Die — The meme that survives every market.</p>
 </section>
 
 <!-- TOKEN INFO -->
@@ -182,7 +198,7 @@ p{
   <div class="card">🔒 LP Burned</div>
 </section>
 
-<!-- ROADMAP -->
+<!-- ROADMAP / STORY -->
 <section>
   <h1>STORY</h1>
 
@@ -209,52 +225,12 @@ p{
   </p>
 
   <div class="buttons">
-    <a href="#" class="btn">BUY</a>
+    <a href="#" class="btn">BUY (SOL)</a>
     <a href="https://x.com/cryptomayo13" target="_blank" class="btn">X</a>
     <a href="#" class="btn">TELEGRAM</a>
+    <a href="https://solscan.io/token/여기에토큰주소" target="_blank" class="btn">CONTRACT</a>
   </div>
 </section>
 
-</div>
-
-<!-- dots -->
-<div class="dots">
-  <span class="dot active"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-</div>
-
-<script>
-let slider = document.getElementById("slider");
-let dots = document.querySelectorAll(".dot");
-let index = 0;
-let startX = 0;
-
-document.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
-});
-
-document.addEventListener("touchend", e=>{
-  let endX = e.changedTouches[0].clientX;
-  if(startX - endX > 50) next();
-  if(endX - startX > 50) prev();
-});
-
-function update(){
-  slider.style.transform = `translateX(-${index * 100}vw)`;
-  dots.forEach(d=>d.classList.remove("active"));
-  dots[index].classList.add("active");
-}
-
-function next(){
-  if(index < 3){ index++; update(); }
-}
-
-function prev(){
-  if(index > 0){ index--; update(); }
-}
-</script>
-
 </body>
-  </html>
+</html>
