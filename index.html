@@ -37,42 +37,64 @@ body::before{
 /* 섹션 공통 */
 section{
   width:100%;
-  padding:60px 15px 40px; /* 상단 padding 늘려서 제목 안 잘림 */
+  padding:70px 15px 50px;
   text-align:center;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
+  scroll-margin-top:20px;
 }
 
 /* Hero title */
-h1{
+h1, h2, .card p, .step, .ca-box span{
   font-family:'Rubik Glitch', cursive;
-  font-size:2.5rem;
-  animation:glow 2s infinite alternate;
-  word-wrap: break-word;
+  text-shadow:
+     0 0 5px #00ffff,
+     0 0 10px #00ffff,
+     0 0 20px #ff00ff,
+     0 0 30px #ff00ff,
+     0 0 40px #00ffff,
+     0 0 55px #00ffff,
+     0 0 75px #ff00ff;
+  color:#fff;
+}
+
+/* Hero */
+h1{
+  font-size:3rem;
   line-height:1.2;
-  margin-bottom:15px;
+  margin-bottom:20px;
+  animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
-  from{text-shadow:0 0 10px #ff00ff;}
-  to{text-shadow:0 0 25px #00ffff;}
+  from{text-shadow:
+     0 0 5px #00ffff,
+     0 0 10px #00ffff,
+     0 0 20px #ff00ff;}
+  to{text-shadow:
+     0 0 25px #ff00ff,
+     0 0 35px #00ffff,
+     0 0 45px #ff00ff;}
 }
 
 .hero img{
   width:90%;
-  max-width:350px;
+  max-width:400px;
   border-radius:25px;
-  box-shadow:0 0 30px rgba(0,255,255,0.5);
+  box-shadow:0 0 35px rgba(0,255,255,0.6);
   margin:25px 0;
 }
 
 p{
   max-width:600px;
-  opacity:.85;
+  opacity:.9;
   margin-bottom:25px;
   line-height:1.5;
+  color:#fff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #00ffff;
+  font-size:1.25rem;
 }
 
 /* buttons */
@@ -84,12 +106,13 @@ p{
 }
 
 .btn{
-  padding:12px 25px;
+  padding:15px 30px;
   border:2px solid white;
   border-radius:50px;
   color:white;
   text-decoration:none;
   transition:.3s;
+  font-weight:bold;
 }
 
 .btn:hover{
@@ -101,55 +124,61 @@ p{
 /* cards */
 .card{
   background:#111;
-  padding:15px 20px;
-  border-radius:20px;
-  margin:10px;
-  box-shadow:0 0 15px rgba(255,255,255,0.1);
-  max-width:300px;
+  padding:20px 25px;
+  border-radius:25px;
+  margin:15px;
+  box-shadow:0 0 20px rgba(255,255,255,0.1);
+  max-width:350px;
   text-align:center;
+  font-size:1.2rem;
 }
 
 /* roadmap */
 .roadmap{
-  max-width:500px;
+  max-width:550px;
   text-align:left;
 }
 .step{
-  border-left:4px solid #00ffff;
-  padding-left:15px;
-  margin:15px 0;
+  border-left:5px solid #00ffff;
+  padding-left:20px;
+  margin:20px 0;
+  font-size:1.2rem;
 }
 
 /* ticker section */
 .ticker {
-  margin:30px auto;
-  padding:20px 25px;
+  margin:35px auto;
+  padding:25px 30px;
   background:rgba(255,255,255,0.05);
   border:2px solid #00ffff;
-  border-radius:20px;
-  max-width:400px;
+  border-radius:25px;
+  max-width:420px;
   text-align:center;
-  box-shadow:0 0 20px rgba(0,255,255,0.3);
+  box-shadow:0 0 25px rgba(0,255,255,0.4);
+  font-size:1.2rem;
 }
 
-.ticker h2 {
-  font-family:'Rubik Glitch', cursive;
-  font-size:1.8rem;
-  color:#00ffff;
-  margin-bottom:10px;
-}
-
-.ticker p {
-  font-size:1rem;
-  opacity:0.8;
-  line-height:1.4;
+/* CA section */
+.ca-box{
+  background:rgba(255,255,255,0.05);
+  border:2px solid #ff00ff;
+  border-radius:20px;
+  padding:20px 25px;
+  margin:20px 0;
+  max-width:420px;
+  color:#fff;
+  text-shadow: 0 0 5px #ff00ff,0 0 15px #00ffff;
+  word-break: break-all;
+  font-size:1.15rem;
 }
 
 /* 모바일 대응 */
 @media(max-width:600px){
-  h1{font-size:1.6rem;padding:0 10px;}
-  .card{max-width:90%;}
-  .ticker{padding:15px 15px; max-width:90%;}
+  h1{font-size:2rem;padding:0 10px;}
+  .card{max-width:90%; font-size:1rem;}
+  .ticker{padding:15px 15px; max-width:90%; font-size:1rem;}
+  .ca-box{max-width:90%; font-size:1rem;}
+  .step{font-size:1rem;}
 }
 </style>
 </head>
@@ -160,7 +189,7 @@ p{
 <section class="hero">
   <h1>MEMES<br>NEVER DIE</h1>
 
-  <p style="font-size:1.2rem;opacity:0.9;">
+  <p>
     When the market dies, memes survive.
   </p>
 
@@ -178,7 +207,6 @@ p{
     <a href="#" class="btn">BUY (SOL)</a>
     <a href="https://x.com/cryptomayo13" target="_blank" class="btn">X</a>
     <a href="#" class="btn">TELEGRAM</a>
-    <a href="https://solscan.io/token/여기에토큰주소" target="_blank" class="btn">CONTRACT</a>
   </div>
 </section>
 
@@ -197,6 +225,11 @@ p{
   <div class="card">🩸 Market dies. Memes survive.</div>
   <div class="card">👀 No Team Tokens</div>
   <div class="card">🔒 LP Burned</div>
+
+  <!-- CA 박스 -->
+  <div class="ca-box">
+    💠 CA: <span>여기에_토큰_컨트랙트_주소</span>
+  </div>
 </section>
 
 <!-- ROADMAP / STORY -->
@@ -204,10 +237,10 @@ p{
   <h1>STORY</h1>
 
   <div class="roadmap">
-    <div class="step">Phase 1: Born in a red market</div>
-    <div class="step">Phase 2: Memes spread while others panic</div>
-    <div class="step">Phase 3: Survivors gather</div>
-    <div class="step">Phase 4: Only memes remain</div>
+    <div class="step">💥 Phase 1: Born in a red market 🔴 (Chaos begins!)</div>
+    <div class="step">😂 Phase 2: Memes spread while others panic 😱 (HODLers unite!)</div>
+    <div class="step">🚀 Phase 3: Survivors gather 💪 (Only legends left!)</div>
+    <div class="step">🔥 Phase 4: Only memes remain 🏆 (Memes conquer all!)</div>
   </div>
 </section>
 
@@ -229,7 +262,6 @@ p{
     <a href="#" class="btn">BUY (SOL)</a>
     <a href="https://x.com/cryptomayo13" target="_blank" class="btn">X</a>
     <a href="#" class="btn">TELEGRAM</a>
-    <a href="https://solscan.io/token/여기에토큰주소" target="_blank" class="btn">CONTRACT</a>
   </div>
 </section>
 
